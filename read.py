@@ -19,13 +19,14 @@ def read_file():
     # This is when data dont have header, Default is have header
     # df = pd.read_csv(root+dataPath, header=None) 
     # df = pd.read_csv(dataPath)
+    # df = pd.read_excel("filename.xlsx", sheetname=0) # to read excel file, sheetname=None will return all sheet
     # print(df.head()) # can specify number of row(s) in df.head(n)
 
     chunksize = 200 # by row
     file_name = 0
     for chunk in pd.read_csv(dataPath, error_bad_lines=False, dtype={'columname':str}, chunksize=chunksize):
         file_name = chunksize + file_name
-        chunk.to_csv(processedPath+ str(file_name) + '_file.txt', index=False, mode='w')
+        chunk.to_csv(processedPath+ str(file_name) + '_lines.txt', index=False, mode='w')
 
     return
 
