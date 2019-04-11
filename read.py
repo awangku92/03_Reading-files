@@ -20,6 +20,7 @@ def read_file():
     # df = pd.read_csv(root+dataPath, header=None) 
     # df = pd.read_csv(dataPath)
     # df = pd.read_excel("filename.xlsx", sheetname=0) # to read excel file, sheetname=None will return all sheet
+    # df = pd.read_fwf("filename.txt") # reading fixed width method
     # print(df.head()) # can specify number of row(s) in df.head(n)
 
     chunksize = 200 # by row
